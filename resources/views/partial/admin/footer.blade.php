@@ -13,6 +13,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
 <!-- ===== Custom JS Files ===== -->
 <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 
 <script>
     if ($(window).width() < 599) {

@@ -1,0 +1,138 @@
+@use 'colors';
+@use 'fonts';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL STYLES */
+ul, li, a{
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: colors.$body;
+}
+
+/* FONT SIZES */
+.default-font-size {
+    font-size: fonts.$default;
+}
+
+.font-size-sm {
+    font-size: fonts.$font-size-sm;
+}
+
+.font-size-sm-2 {
+    font-size: fonts.$font-size-sm-2;
+}
+
+.font-size-sm-3 {
+    font-size: fonts.$font-size-sm-3;
+}
+
+
+
+/* COLORS */
+.text-base-color{
+    color: colors.$base-color;
+}
+
+.linear-red-bg{
+    background: colors.$linear-red;
+}
+
+.linear-orange-bg{
+    background: colors.$linear-orange;
+}
+
+
+/* OVERRIDE SOME BOOTSTRAP STYLES */
+.rounded-sm{
+    border-radius: 8px;
+}
+.rounded-lg{
+    border-radius: 32px;
+}
+
+
+
+/* SHARED COMPONENT STYLES */
+aside{
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    background: colors.$base-color;
+    color: colors.$white;
+    border-radius: 0 30px 0 0;
+
+    .sidebar-logo {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .sidebar-nav{
+        width: 85%;
+        margin-left: auto;
+        height: 80vh;
+
+       .sidebar-item{
+           width: 100%;
+           padding: 1rem;
+
+           &.active{
+               background: colors.$white;
+               border-radius: 15px 0 0 15px;
+               .sidebar-link{
+                   color: colors.$base-color;
+               }
+           }
+
+           .sidebar-link{
+               color: colors.$white;
+           }
+
+
+       }
+    }
+}
+
+main{
+    width: 85%;
+    height: 100%;
+    margin-left: auto;
+    padding: 25px;
+}
+
+
+.logo-lg{
+    width: 120px;
+    height: 80px;
+}
+
+
+.title-underline{
+    &:before{
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        content: '';
+        width: 2.5rem;
+        background: colors.$base-color;
+        height: 4px;
+        border-radius: 32px;
+    }
+}
+
+
+/* DASHBOARD STYLES*/
+//#dashboard-content{
+//
+//}
+
+
