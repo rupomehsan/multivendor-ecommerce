@@ -16,6 +16,7 @@
     Route::prefix('admin')->group(function () {
         Route::view('/dashboard', 'admin.dashboard.index');
         Route::view('/category', 'admin.category.index');
+        Route::view('/category', 'admin.category.create');
         Route::view('/pos', 'admin.pos.index');
     });
 
