@@ -112,13 +112,37 @@ body {
 /* BUTTONS */
 .btn-base {
   color: #FFFFFF;
-  background: #130577;
   border-radius: 32px;
   text-transform: capitalize;
 }
-.btn-base:hover {
+.btn-base:focus {
+  box-shadow: none !important;
+}
+
+.btn-base-primary {
+  background: #130577;
   color: #FFFFFF;
-  background: #2850B9;
+}
+.btn-base-primary:hover {
+  color: #FFFFFF;
+  background: #2a1d84;
+}
+
+.btn-base-warning {
+  color: #FFFFFF;
+  background: #F8AB38;
+}
+.btn-base-warning:hover {
+  color: #FFFFFF;
+  background: #f8b34b;
+}
+
+.btn-base-pink {
+  background: #EF344F;
+}
+.btn-base-pink:hover {
+  color: #FFFFFF;
+  background: #f04860;
 }
 
 .btn-outline-base {
@@ -165,6 +189,13 @@ aside .sidebar-nav .sidebar-item .sidebar-link {
   color: #FFFFFF;
 }
 
+.active {
+  background: #FFFFFF;
+  border-radius: 15px 0 0 15px;
+  padding: 1rem;
+  color: #130577;
+}
+
 main {
   width: 85%;
   height: 100%;
@@ -207,6 +238,10 @@ main {
   border-radius: 5px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* PAGE-DASHBOARD STYLES*/
 /* PAGE-POS STYLES*/
 #pos-content .pos-cards .pos-card-item {
@@ -215,5 +250,5 @@ main {
 #pos-content .pos-cards .pos-card-item .pos-item-img {
   width: 100px;
   height: 60px;
-  margin: 100px 0;
+  margin: 50px 0;
 }

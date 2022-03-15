@@ -26,15 +26,29 @@
                 <span class="iconify" data-icon="ic:sharp-space-dashboard" data-width="25" data-height="25"></span>
                 POS
             </a>
-
         </li>
-        <li class="sidebar-item {{ $currentControllerName == 'pos' || '' ? 'active' : '' }}">
-            <a href="{{url('admin/category')}}" class="sidebar-link">
+
+
+        <li class="sidebar-item {{ $currentControllerName == 'attributes' || '' ? 'active' : '' }}">
+            <a href="{{url('admin/attributes')}}" class="sidebar-link">
                 <span class="iconify" data-icon="ic:sharp-space-dashboard" data-width="25" data-height="25"></span>
-                Category
+                Attributes
             </a>
-
         </li>
+
+{{--        <li class="sidebar-item sub-menu-btn pointer">--}}
+{{--            <span class="iconify" data-icon="ic:sharp-space-dashboard" data-width="25" data-height="25"></span>--}}
+{{--            Category--}}
+{{--        </li>--}}
+
+{{--        <ul class="sub-menu-item d-none">--}}
+{{--            <li class="text-primary">a</li>--}}
+{{--            <li class="text-primary">b</li>--}}
+{{--        </ul>--}}
+{{--        --}}
+{{--        </li>--}}
 
     </ul>
 </aside>
+
+

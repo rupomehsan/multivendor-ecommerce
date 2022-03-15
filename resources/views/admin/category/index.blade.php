@@ -1,40 +1,25 @@
 @extends('layouts.admin.index')
 @section('content')
-    <main class="main">
-        <form action="{{ route("admin.products.store") }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="price">Price*</label>
-                <input type="number" name="price" class="form-control" step="0.01">
-            </div>
-            <div class="form-group">
-                <label for="properties">Properties</label>
-                <div class="row">
-                    <div class="col-md-2">
-                        Key:
-                    </div>
-                    <div class="col-md-4">
-                        Value:
+    <main id="category-list-content">
+
+        <div class="row row-cols-lg-1">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Category</h6>
+
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <form>
+                                <input type="search" class="form-control" placeholder="Search Category">
+                            </form>
+                        </div>
+
+                        <div class="col-lg-2 col-sm-6 col-12">
+                            <button class="btn btn-base btn-base-primary form-control">Add category</button>
+                        </div>
                     </div>
                 </div>
-                @for ($i=0; $i <= 4; $i++)
-                    <div class="row">
-                        <div class="col-md-2">
-                            <input type="text" name="properties[{{ $i }}][key]" class="form-control" value="{{ old('properties['.$i.'][key]') }}">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" name="properties[{{ $i }}][value]" class="form-control" value="{{ old('properties['.$i.'][value]') }}">
-                        </div>
-                    </div>
-                @endfor
             </div>
-            <div>
-                <input class=" btn btn-danger" type="submit">
-            </div>
-        </form>
+        </div>
     </main>
 @endsection
