@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->string('meta_tag_desc')->nullable();
             $table->string('meta_tag_keyword')->nullable();
             $table->json('image')->nullable();
+            $table->json('tags')->nullable();
             $table->string('status')->nullable()->default('active');
             $table->timestamps();
         });
