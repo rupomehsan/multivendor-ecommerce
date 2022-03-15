@@ -18,5 +18,7 @@
         Route::view('/category', 'admin.category.index');
         Route::view('/category', 'admin.category.create');
         Route::view('/pos', 'admin.pos.index');
+        Route::view('/pos/order-list', 'admin.pos.order_list');
+        Route::view('/attributes', 'admin.attributes.index');
     });
 

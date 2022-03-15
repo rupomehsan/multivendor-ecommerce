@@ -11,8 +11,8 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+
 <!-- ===== Custom JS Files ===== -->
-<script src="{{asset('assets/js/app.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
 
 <script>

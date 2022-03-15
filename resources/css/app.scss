@@ -115,16 +115,44 @@ body {
     border: none;
 }
 
+
+
 /* BUTTONS */
 .btn-base{
     color: colors.$white;
-    background: colors.$base-color;
     border-radius: 32px;
     text-transform: capitalize;
 
+    &:focus{
+        box-shadow: none !important;
+    }
+
+}
+
+.btn-base-primary{
+    background: colors.$base-color;
+    color: colors.$white;
     &:hover {
         color: colors.$white;
-        background: colors.$base-color-light;
+        background: colors.$base-color-light-2;
+    }
+}
+
+.btn-base-warning{
+    color: colors.$white;
+    background: colors.$base-warning;
+    &:hover {
+        color: colors.$white;
+        background: colors.$base-warning-light;
+    }
+}
+
+
+.btn-base-pink{
+    background: colors.$base-pink;
+    &:hover {
+        color: colors.$white;
+        background: colors.$base-pink-light;
     }
 }
 
@@ -190,6 +218,15 @@ aside {
     }
 }
 
+
+.active{
+    background: colors.$white;
+    border-radius: 15px 0 0 15px;
+    padding: 1rem;
+    color: colors.$base-color;
+}
+
+
 main {
     width: 85%;
     height: 100%;
@@ -237,6 +274,10 @@ main {
     }
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 /* PAGE-DASHBOARD STYLES*/
 
 
@@ -255,7 +296,7 @@ main {
             .pos-item-img{
                 width: 100px;
                 height: 60px;
-                margin: 100px 0;
+                margin: 50px 0;
             }
         }
 
