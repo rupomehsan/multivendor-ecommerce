@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
     <!-- ===== Custom CSS Files ===== -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
