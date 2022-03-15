@@ -46,6 +46,12 @@ body {
   background: linear-gradient(101.69deg, #F8713C 0.51%, #D73D00 101.16%);
 }
 
+/* IMAGE STYLE */
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+}
+
 /* OVERRIDE SOME BOOTSTRAP STYLES */
 .rounded-sm {
   border-radius: 8px;
@@ -53,6 +59,16 @@ body {
 
 .rounded-lg {
   border-radius: 32px;
+}
+
+.btn-outline-base {
+  color: #2850B9;
+  border: 1px solid #2850B9;
+  border-radius: 8px;
+}
+.btn-outline-base:hover {
+  color: #FFFFFF;
+  background: #2850B9;
 }
 
 /* SHARED COMPONENT STYLES */

@@ -1,21 +1,21 @@
 @use 'colors';
 @use 'fonts';
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* GENERAL STYLES */
-ul, li, a{
+ul, li, a {
     list-style-type: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background: colors.$body;
 }
 
@@ -37,33 +37,49 @@ body{
 }
 
 
-
 /* COLORS */
-.text-base-color{
+.text-base-color {
     color: colors.$base-color;
 }
 
-.linear-red-bg{
+.linear-red-bg {
     background: colors.$linear-red;
 }
 
-.linear-orange-bg{
+.linear-orange-bg {
     background: colors.$linear-orange;
+}
+
+/* IMAGE STYLE */
+.avatar-sm{
+    width: 40px;
+    height: 40px;
 }
 
 
 /* OVERRIDE SOME BOOTSTRAP STYLES */
-.rounded-sm{
+.rounded-sm {
     border-radius: 8px;
 }
-.rounded-lg{
+
+.rounded-lg {
     border-radius: 32px;
 }
 
+.btn-outline-base {
+    color: colors.$base-color-light;
+    border: 1px solid colors.$base-color-light;
+    border-radius: 8px;
+
+    &:hover {
+        color: colors.$white;
+        background: colors.$base-color-light;
+    }
+}
 
 
 /* SHARED COMPONENT STYLES */
-aside{
+aside {
     position: fixed;
     width: 15%;
     height: 100%;
@@ -76,33 +92,34 @@ aside{
         text-align: center;
     }
 
-    .sidebar-nav{
+    .sidebar-nav {
         width: 85%;
         margin-left: auto;
         height: 80vh;
 
-       .sidebar-item{
-           width: 100%;
-           padding: 1rem;
+        .sidebar-item {
+            width: 100%;
+            padding: 1rem;
 
-           &.active{
-               background: colors.$white;
-               border-radius: 15px 0 0 15px;
-               .sidebar-link{
-                   color: colors.$base-color;
-               }
-           }
+            &.active {
+                background: colors.$white;
+                border-radius: 15px 0 0 15px;
 
-           .sidebar-link{
-               color: colors.$white;
-           }
+                .sidebar-link {
+                    color: colors.$base-color;
+                }
+            }
+
+            .sidebar-link {
+                color: colors.$white;
+            }
 
 
-       }
+        }
     }
 }
 
-main{
+main {
     width: 85%;
     height: 100%;
     margin-left: auto;
@@ -110,14 +127,14 @@ main{
 }
 
 
-.logo-lg{
+.logo-lg {
     width: 120px;
     height: 80px;
 }
 
 
-.title-underline{
-    &:before{
+.title-underline {
+    &:before {
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -132,7 +149,9 @@ main{
 
 /* DASHBOARD STYLES*/
 //#dashboard-content{
-//
+//    .dataTables_filter {
+//        display: none;
+//    }
 //}
 
 
