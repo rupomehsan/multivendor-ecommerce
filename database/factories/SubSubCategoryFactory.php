@@ -17,6 +17,7 @@ class SubSubCategoryFactory extends Factory
             "category_id" =>$this->faker->numberBetween(1,9),
             "sub_category_id" =>$this->faker->numberBetween(1,9),
             "name" =>$this->faker->name,
+            "image" =>$this->faker->imageUrl('100','100'),
         ];
     }
 }

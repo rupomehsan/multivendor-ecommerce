@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\attribute\AttributeController;
+use App\Http\Controllers\Api\brand\BrandController;
 use App\Http\Controllers\Api\category\CategoryController;
 use App\Http\Controllers\Api\category\SubCategoryController;
 use App\Http\Controllers\Api\category\SubSubCategoryController;
@@ -32,4 +34,16 @@ Route::prefix('v1')->group(function(){
     store,update,edit,delete
     */
     Route::resource('sub-sub-categories', SubSubCategoryController::class);
+    /*
+     Brand
+    store,update,edit,delete
+    */
+    Route::resource('brands', BrandController::class);
+  /*
+     Attribute
+    store,update,edit,delete
+    */
+    Route::resource('attributes', AttributeController::class);
+
+
 });

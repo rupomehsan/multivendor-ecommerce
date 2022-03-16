@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             SubCategorySeeder::class,
             SubSubCategorySeeder::class,
+            BrandSeeder::class,
+            AttributeSedder::class,
+            SliderSeeder::class,
         ]);
     }
 }
