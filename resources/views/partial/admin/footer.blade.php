@@ -11,41 +11,11 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
-
+<script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
 <!-- ===== Custom JS Files ===== -->
 <script src="{{asset('js/app.js')}}"></script>
 
-<script>
-    if ($(window).width() < 599) {
-        $(".sidebar-toggle-button").click(function() {
-            $('#sidebar').addClass('sidebar-hide')
-            $('#sidebar').removeClass('sidebar-display')
-            $('body').removeClass('toggle-sidebar')
-        });
-    }
 
-
-    if ($(window).width() < 1200) {
-        $('body').addClass('toggle-sidebar')
-    }
-
-    // $(window).resize(function() {
-    //     //do something
-    //
-    //     var width = $(document).width();
-    //
-    //
-    //     if (width < 599) {
-    //         console.log('hello')
-
-    //         // $(document).on("click", '.sidebar-toggle-button', function (){
-    //         //
-    //         // });
-    //
-    //
-    //     }
-    // });
-</script>
 
 @stack('custom-js')
 </body>
