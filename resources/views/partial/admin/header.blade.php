@@ -17,6 +17,7 @@
     <!-- ===== CDN CSS Files ===== -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
     <!-- ===== Custom CSS Files ===== -->
 {{--    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
