@@ -1,8 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\attribute\AttributeController;
+use App\Http\Controllers\Api\brand\BrandController;
+use App\Http\Controllers\Api\category\CategoryController;
+use App\Http\Controllers\Api\category\SubCategoryController;
+use App\Http\Controllers\Api\category\SubSubCategoryController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,7 +21,29 @@ use App\Http\Controllers\Api\CategoryController;
 Route::prefix('v1')->group(function(){
     /*
      Category
-    create,update,edit,delete,show,index
+    store,update,edit,delete
     */
     Route::resource('categories', CategoryController::class);
+    /*
+     sub-Category
+    store,update,edit,delete
+    */
+    Route::resource('sub-categories', SubCategoryController::class);
+    /*
+     sub-sub-Category
+    store,update,edit,delete
+    */
+    Route::resource('sub-sub-categories', SubSubCategoryController::class);
+    /*
+     Brand
+    store,update,edit,delete
+    */
+    Route::resource('brands', BrandController::class);
+  /*
+     Attribute
+    store,update,edit,delete
+    */
+    Route::resource('attributes', AttributeController::class);
+
+
 });

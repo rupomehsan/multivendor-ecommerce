@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CategoryFactory extends Factory
+class SubCategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,9 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-             "name" =>$this->faker->name,
-             "image" =>$this->faker->imageUrl('100','100'),
+            "category_id" =>$this->faker->numberBetween(1,9),
+            "name" =>$this->faker->firstName,
+            "image" =>$this->faker->imageUrl('100','100'),
         ];
     }
 }

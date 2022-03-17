@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\attribute;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Validator;
 
-class CategoryController extends Controller
+class AttributeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,12 @@ class CategoryController extends Controller
     public function index()
     {
         try {
-            $getItem = Category::all();
+            $getAttribute = Attribute::paginate(5);
             return response([
                 "status" => 'success',
-                "data" => $getItem
+                "data" => $getAttribute
             ],200);
-        }catch (Exception$e){
+        }catch (Exception $e){
             return response([
                 "status" => 'success',
                 "data" => $e->getMessage()
@@ -56,13 +56,13 @@ class CategoryController extends Controller
             $errors = $validator->errors()->messages();
             return validateError($errors);
         }
-        $item = new Category();
-        $item->name = $request->name;
-        $item->status = $request->status;
-        if($item->save()){
+//        dd($request->all());
+        $attribute = new Attribute();
+        $attribute->name = $request->name;
+        if($attribute->save()){
             return response([
                 "status" => "success",
-                "message" => "Category Successfully Create"
+                "message" => "Attribute Successfully Create"
             ]);
         }
     }
@@ -86,7 +86,17 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $getAttribute = Attribute::where("id",$id)->first();
+        if($getAttribute){
+            return response([
+                "status" => "success",
+                "data" => $getAttribute
+            ]);
+        }else{
+            return response([
+                "status" =>'not_found'
+            ], 404);
+        }
     }
 
     /**
@@ -105,13 +115,13 @@ class CategoryController extends Controller
             $errors = $validator->errors()->messages();
             return validateError($errors);
         }
-        $item = Category::where("id",$id)->first();
-        $item->name = $request->name;
-        $item->status = $request->status;
-        if($item->update()){
+        $attribute = Attribute::where("id",$id)->first();
+        $attribute->name = $request->name ??  $attribute->name ;
+        $attribute->status = $request->status ??  $attribute->status ;
+        if($attribute->update()){
             return response([
                 "status" => "success",
-                "message" => "Category Successfully Update"
+                "message" => "Attribute Successfully Update"
             ]);
         }
     }
@@ -125,9 +135,19 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         try{
-
+            $attribute = Attribute::find($id);
+            if($attribute){
+                $attribute->delete();
+            }
+            return response([
+                "status" => "success",
+                "message" => "Attribute Successfully Delete"
+            ],200);
         }catch (\Exception $e){
-
+            return response([
+                "status" =>"server_error",
+                "message" => $e->getMessage()
+            ],500);
         }
     }
 }
