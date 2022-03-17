@@ -30,6 +30,12 @@ body::-webkit-scrollbar-track {
   background: #E5E5E5;
 }
 
+/* WRAPPER (CUSTOM CONTAINER)*/
+.wrapper {
+  width: 90%;
+  margin: auto;
+}
+
 /* FONT SIZES */
 .default-font-size {
   font-size: 14px;
@@ -89,6 +95,10 @@ body::-webkit-scrollbar-track {
   height: 200px;
 }
 
+.avatar-table {
+  height: 100px;
+}
+
 /* SEARCH FORM */
 .search-form {
   width: 100%;
@@ -128,6 +138,8 @@ body::-webkit-scrollbar-track {
   color: #FFFFFF;
   border-radius: 32px;
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
 }
 .btn-base:focus {
   box-shadow: none !important;
@@ -208,6 +220,29 @@ body::-webkit-scrollbar-track {
   transition: 0.4s;
 }
 
+/* TABLE STYLES*/
+.table {
+  border-bottom: none !important;
+}
+.table tbody, .table td, .table tfoot, .table th, .table thead, .table tr {
+  border: none !important;
+}
+.table tr {
+  border-radius: 15px !important;
+  overflow: hidden !important;
+}
+.table thead {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.table thead tr {
+  background: #E5E5E5;
+  border-radius: 10px !important;
+}
+.table tbody .odd {
+  background: white !important;
+}
+
 /* FILES UPLOADS*/
 .dropzone {
   border: 1px dashed #130577;
@@ -275,6 +310,31 @@ aside .sidebar-nav .sidebar-item .sidebar-link .iconify {
   top: 50%;
   left: 30px;
   transform: translate(-50%, -50%);
+}
+aside .sidebar-nav .sidebar-sub-item .sub-menu-btn {
+  display: block;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+aside .sidebar-nav .sidebar-sub-item .sub-menu-btn .sub-menu-indicator {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%, -50%);
+}
+aside .sidebar-nav .sidebar-sub-item .sub-menu-list .sub-list-item {
+  margin-left: 40px;
+}
+aside .sidebar-nav .sidebar-sub-item .sub-menu-list .sub-list-item .sub-list-link {
+  display: block;
+  padding: 1rem;
+  color: #FFFFFF;
+}
+aside .sidebar-nav .sidebar-sub-item .sub-menu-list .sub-list-item .sub-list-link.active, aside .sidebar-nav .sidebar-sub-item .sub-menu-list .sub-list-item .sub-list-link:hover {
+  background: #3d328f;
+  border-radius: 15px 0 0 15px;
+  color: #FFFFFF;
 }
 
 main {

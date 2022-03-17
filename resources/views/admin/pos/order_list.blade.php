@@ -66,7 +66,7 @@
 @push('custom-js')
     <script>
         $(document).ready(function () {
-            $('#order-table').DataTable({
+            $('#orders-table').DataTable({
                 "searching": false,
                 "lengthChange": false,
                 "ordering": false,

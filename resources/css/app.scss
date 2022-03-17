@@ -36,8 +36,11 @@ body {
         background: colors.$body;
     }
 }
-
-
+/* WRAPPER (CUSTOM CONTAINER)*/
+.wrapper{
+    width: 90%;
+    margin: auto;
+}
 /* FONT SIZES */
 .default-font-size {
     font-size: fonts.$default;
@@ -98,6 +101,10 @@ body {
     height: 200px;
 }
 
+.avatar-table{
+    height: 100px;
+}
+
 /* SEARCH FORM */
 .search-form {
     width: 100%;
@@ -142,6 +149,8 @@ body {
     color: colors.$white;
     border-radius: 32px;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
 
     &:focus {
         box-shadow: none !important;
@@ -237,6 +246,47 @@ body {
     }
 }
 
+/* TABLE STYLES*/
+
+.table{
+    border-bottom: none !important;
+
+    tbody, td, tfoot, th, thead, tr{
+        border: none !important;
+    }
+
+    tr{
+        border-radius: 15px !important;
+        overflow: hidden !important;
+    }
+
+    thead{
+        border-radius: 10px !important;
+        overflow: hidden;
+        tr{
+            background: colors.$body;
+            border-radius: 10px !important;
+        }
+
+    }
+    tbody{
+        .odd{
+            background: white !important;
+        }
+    }
+}
+
+
+//.table-striped>tbody>tr:nth-child(odd)>td,
+//.table-striped>tbody>tr:nth-child(odd)>th {
+//    background-color: white // Choose your own color here
+//}
+//
+//.table-striped>tbody>tr:nth-child(even)>td,
+//.table-striped>tbody>tr:nth-child(even)>th {
+//    background-color: #2E3338; // Choose your own color here
+//}
+
 /* FILES UPLOADS*/
 .dropzone {
     border: 1px dashed colors.$base-color;
@@ -271,8 +321,6 @@ aside {
             transform: translate(-50%, -50%);
             color: colors.$base-color !important;
         }
-
-
     }
 
     .sidebar-logo {
@@ -316,9 +364,42 @@ aside {
                     transform: translate(-50%, -50%);
                 }
             }
-
-
         }
+        .sidebar-sub-item{
+            .sub-menu-btn{
+                display: block;
+                padding: 1rem;
+                cursor: pointer;
+                position: relative;
+
+                .sub-menu-indicator{
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .sub-menu-list{
+                .sub-list-item{
+                    margin-left: 40px ;
+
+                    .sub-list-link{
+                        display: block;
+                        padding: 1rem;
+                        color: colors.$white;
+                        &.active, &:hover{
+                            background: #3d328f;
+                            border-radius: 15px 0 0 15px;
+                            color: colors.$white;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
     }
 }
 

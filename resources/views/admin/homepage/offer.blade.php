@@ -5,7 +5,7 @@
         <div class="wrapper">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title text-base-color">Category</h4>
+                    <h4 class="card-title text-uppercase text-base-color">Offers</h4>
 
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-4 col-sm-6 col-12 my-3">
@@ -17,26 +17,48 @@
                         </div>
 
                         <div class="col-lg-2 col-sm-2 col-12">
-                            <button class="btn btn-base btn-base-primary" data-bs-target="#categoryModal" data-bs-toggle="modal">
+                            <button class="btn btn-base btn-base-primary" data-bs-target="#offerModal" data-bs-toggle="modal">
                                 <span class="iconify me-2" data-icon="carbon:add-filled" style="color: white;"
                                       data-width="20" data-height="20"></span>
-                                Add Category
+                                Add Offer
                             </button>
                         </div>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="categoryModal">
+                        <div class="modal fade" id="offerModal">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header border-0">
-                                        <h5 class="modal-title">ADD CATEGORY</h5>
+                                        <h5 class="modal-title">ADD SUB SUB CATEGORY</h5>
                                     </div>
                                     <div class="modal-body">
-                                       <div class="form-group">
-                                           <label for="name" id="name_label" class="form-label">Category Name</label>
-                                           <input type="text" id="name" name="name" placeholder="Category Name" class="form-control">
+
+                                        <div class="form-group">
+                                           <label for="name" id="name_label" class="form-label">Product Name</label>
+                                           <input type="text" id="name" name="name" placeholder="Product Name" class="form-control">
                                            <span class="text-danger" id="name_error">Error Msg</span>
                                        </div>
+
+
+                                        <div class="form-group">
+                                           <label for="name" id="name_label" class="form-label">Product Category</label>
+                                           <input type="text" id="name" name="name" placeholder="Product Name" class="form-control">
+                                           <span class="text-danger" id="name_error">Error Msg</span>
+                                       </div>
+
+                                        <div class="form-group">
+                                           <label for="name" id="name_label" class="form-label">Offer Percentage</label>
+                                           <input type="text" id="name" name="name" placeholder="Product Name" class="form-control">
+                                           <span class="text-danger" id="name_error">Error Msg</span>
+                                       </div>
+
+
+
+                                        <label for="" class="form-label">Upload Image</label>
+                                        <div class="dropzone" id="image-box"></div>
+                                        <input type="hidden" id="image" name="logo">
+
+
                                     </div>
                                     <div class="modal-footer border-0 justify-content-start">
                                         <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
@@ -51,7 +73,10 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Category Name</th>
+                                    <th>Offer Image</th>
+                                    <th>Product Name </th>
+                                    <th>Product Description</th>
+                                    <th>Offer Percentage</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -60,7 +85,12 @@
                                 <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Baby & Toddler</td>
+                                    <td>
+                                        <img class="avatar-table" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                                    </td>
+                                    <td>Lotion</td>
+                                    <td>Lotion</td>
+                                    <td>6%</td>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -75,39 +105,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td>1</td>
-                                    <td>Baby & Toddler</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="iconify" data-icon="bxs:edit" data-width="20"
-                                              data-height="20"></span>
-                                        <span class="iconify" data-icon="ant-design:delete-outlined"
-                                              data-width="20" data-height="20"></span>
-                                    </td>
-                                </tr>
 
-                                <tr>
-                                    <td>1</td>
-                                    <td>Baby & Toddler</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="iconify" data-icon="bxs:edit" data-width="20"
-                                              data-height="20"></span>
-                                        <span class="iconify" data-icon="ant-design:delete-outlined"
-                                              data-width="20" data-height="20"></span>
-                                    </td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -125,6 +123,39 @@
                 "searching": false,
                 "lengthChange": false,
                 "ordering": false,
+            });
+
+
+
+            let image = new Dropzone("#image-box", {
+
+                url: window.origin + "/api/v1/uploads.php",
+                method: "post",
+                uploadMultiple: false,
+                createImageThumbnails: true,
+                paramName: "file",
+                clickable: true,
+
+
+                init: function () {
+                    this.on('addedfile', function (file) {
+                        if (this.files.length > 1) {
+                            this.removeFile(this.files[0]);
+                        }
+                    });
+
+                },
+
+                success: function (file, res) {
+                    // let defaultExistFile = $('.dz-preview.dz-complete.dz-image-preview')
+                    //
+                    // if (defaultExistFile) {
+                    //     defaultExistFile.remove()
+                    // }
+                    //
+                    // $('#' + hiddenId).val(res.data)
+                    // data = res.data;
+                },
             });
         });
     </script>

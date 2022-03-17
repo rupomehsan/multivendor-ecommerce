@@ -5,7 +5,7 @@
         <div class="wrapper">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title text-base-color">Category</h4>
+                    <h4 class="card-title text-base-color">Sub Category</h4>
 
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-4 col-sm-6 col-12 my-3">
@@ -20,7 +20,7 @@
                             <button class="btn btn-base btn-base-primary" data-bs-target="#categoryModal" data-bs-toggle="modal">
                                 <span class="iconify me-2" data-icon="carbon:add-filled" style="color: white;"
                                       data-width="20" data-height="20"></span>
-                                Add Category
+                                Add Sub Category
                             </button>
                         </div>
 
@@ -29,12 +29,20 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header border-0">
-                                        <h5 class="modal-title">ADD CATEGORY</h5>
+                                        <h5 class="modal-title">ADD SUB CATEGORY</h5>
                                     </div>
                                     <div class="modal-body">
                                        <div class="form-group">
                                            <label for="name" id="name_label" class="form-label">Category Name</label>
-                                           <input type="text" id="name" name="name" placeholder="Category Name" class="form-control">
+                                           <select name="" id="" class="form-select">
+                                               <option value="" selected>Select Category</option>
+                                           </select>
+                                           <span class="text-danger" id="name_error">Error Msg</span>
+                                       </div>
+
+                                        <div class="form-group">
+                                           <label for="name" id="name_label" class="form-label">Sub Category Name</label>
+                                           <input type="text" id="name" name="name" placeholder="Sub Category Name" class="form-control">
                                            <span class="text-danger" id="name_error">Error Msg</span>
                                        </div>
                                     </div>
@@ -52,6 +60,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Category Name</th>
+                                    <th>Sub Category Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -61,6 +70,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Baby & Toddler</td>
+                                    <td>Lotion</td>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -78,6 +88,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Baby & Toddler</td>
+                                    <td>Diaper</td>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -95,6 +106,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Baby & Toddler</td>
+                                    <td>Toys</td>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox">

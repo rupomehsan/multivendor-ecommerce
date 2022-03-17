@@ -27,7 +27,7 @@
                                     </div>
 
                                     <div class="col">
-                                        <a href="{{url('admin/pos/order-list')}}" class="btn btn-base btn-base-primary">See all orders</a>
+                                        <a href="{{url('admin/pos/orders-list')}}" class="btn btn-base btn-base-primary">See all orders</a>
                                     </div>
                                 </div>
                             </div>
